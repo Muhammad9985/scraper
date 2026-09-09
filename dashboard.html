@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizScrape Pro - Leads Manager Dashboard | MR Software</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Dashboard custom layout enhancements */
+    .dashboard-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .top-stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .action-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding-left: 36px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .export-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-container">
+    <!-- Header -->
+    <div class="dashboard-header">
+      <div class="logo-group">
+        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 20px;">B</div>
+        <div>
+          <h1 class="brand-title" style="font-size: 22px;">BizScrape Pro Dashboard</h1>
+          <p style="font-size: 12px; color: var(--text-muted);">Created by <a href="https://mr-software.online" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">MR Software</a> • mr-software.online</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a href="guide.html" class="btn btn-secondary" style="width: auto;">📖 User Guide</a>
+        <button id="refreshBtn" class="btn btn-secondary" style="width: auto;">🔄 Refresh Data</button>
+      </div>
+    </div>
+
+    <!-- Top Key Metrics Cards -->
+    <div class="top-stats-row">
+      <div class="card" style="margin: 0;">
+        <div class="card-title">Total Leads Found</div>
+        <div id="metricTotalLeads" class="stat-value" style="font-size: 28px; color: white;">0</div>
+      </div>
+      <div class="card" style="margin: 0;">
+        <div class="card-title">Phone Coverage</div>
+        <div id="metricPhoneCount" class="stat-value" style="font-size: 28px; color: var(--accent-green);">0</div>
+      </div>
+      <div class="card" style="margin: 0;">
+        <div class="card-title">Emails Discovered</div>
+        <div id="metricEmailCount" class="stat-value" style="font-size: 28px; color: var(--accent-cyan);">0</div>
+      </div>
+      <div class="card" style="margin: 0;">
+        <div class="card-title">Email Success Rate</div>
+        <div id="metricEmailRate" class="stat-value" style="font-size: 28px; color: var(--primary);">0%</div>
+      </div>
+    </div>
+
+    <!-- Action Bar & Controls -->
+    <div class="action-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="input-text" placeholder="Search by name, category, phone, email, or city...">
+      </div>
+
+      <div class="export-btns">
+        <button id="exportCsvBtn" class="btn btn-primary" style="width: auto;">📥 Export CSV (Excel)</button>
+        <button id="exportJsonBtn" class="btn btn-secondary" style="width: auto;">📄 Export JSON</button>
+        <button id="copyEmailsBtn" class="btn btn-secondary" style="width: auto;">📋 Copy All Emails</button>
+        <button id="deleteSelectedBtn" class="btn btn-danger" style="width: auto; display: none;">🗑 Delete Selected</button>
+      </div>
+    </div>
+
+    <!-- Data Table Container -->
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width: 40px;"><input type="checkbox" id="selectAllCheckbox"></th>
+            <th style="width: 50px; text-align: center;">SN#</th>
+            <th>Business Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Website</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="leadsTableBody">
+          <!-- Dynamically populated rows -->
+        </tbody>
+      </table>
+
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <div style="font-size: 40px; margin-bottom: 10px;">🔍</div>
+        <h3>No Leads Found</h3>
+        <p>Run a business search from the extension popup to start populating your dashboard.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Created by <a href="https://mr-software.online" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">MR Software</a> • All rights reserved.
+      <br>Official Website: <a href="https://mr-software.online" target="_blank" style="color: var(--text-muted); text-decoration: underline;">https://mr-software.online</a>
+    </div>
+
+  </div>
+
+  <script src="lib/utils.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

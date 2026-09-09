@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizScrape Pro - Fast Lead Scraper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup-body">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo-group">
+      <div class="logo-icon">B</div>
+      <div>
+        <div class="brand-title">BizScrape Pro</div>
+        <div style="font-size: 10px; color: var(--text-dim);">By MR Software</div>
+      </div>
+    </div>
+    <div id="statusBadge" class="badge badge-idle">IDLE</div>
+  </div>
+
+  <!-- Search & Bot Setup Form -->
+  <div id="setupCard" class="card">
+    <div class="card-title">Search Parameters</div>
+    
+    <div class="form-group">
+      <label class="form-label" for="categoryInput">Business Type / Category</label>
+      <input type="text" id="categoryInput" class="input-text" placeholder="e.g. Dentists, Plumbers, Real Estate" value="Dentists">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="locationInput">Target Location</label>
+      <input type="text" id="locationInput" class="input-text" placeholder="e.g. New York, NY or Miami, FL" value="Miami, FL">
+    </div>
+
+    <div class="input-row">
+      <div class="form-group">
+        <label class="form-label" for="targetCountInput">Target Lead Goal</label>
+        <input type="number" id="targetCountInput" class="input-text" min="5" max="1000" value="100">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="scrapeSpeedSelect">Scrape Speed</label>
+        <select id="scrapeSpeedSelect" class="select-input">
+          <option value="balanced" selected>Balanced</option>
+          <option value="ultra">Ultra Fast</option>
+          <option value="safe">Safe (Human)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox-group">
+        <input type="checkbox" id="extractEmailsCheck" checked>
+        <span>Extract emails from business websites</span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox-group">
+        <input type="checkbox" id="requireContactCheck" checked>
+        <span>Skip leads missing both Phone & Email</span>
+      </label>
+    </div>
+
+    <button id="startBtn" class="btn btn-primary">
+      <span>🚀 Start Lead Scraper</span>
+    </button>
+  </div>
+
+  <!-- Active Session Live Progress Card -->
+  <div id="progressCard" class="card" style="display: none;">
+    <div class="card-title" id="progressTitle">Scraping in Progress...</div>
+    
+    <div class="progress-container">
+      <div class="progress-bar-bg">
+        <div id="progressBarFill" class="progress-bar-fill"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-dim); margin-top: 6px;">
+        <span id="progressPercent">0%</span>
+        <span id="progressRatio">0 / 100</span>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div id="statFound" class="stat-value">0</div>
+        <div class="stat-label">Leads</div>
+      </div>
+      <div class="stat-box">
+        <div id="statEmails" class="stat-value" style="color: var(--accent-cyan);">0</div>
+        <div class="stat-label">Emails</div>
+      </div>
+      <div class="stat-box">
+        <div id="statDups" class="stat-value" style="color: var(--accent-amber);">0</div>
+        <div class="stat-label">Dups Avoided</div>
+      </div>
+    </div>
+
+    <div class="btn-group" style="margin-top: 14px;">
+      <button id="pauseBtn" class="btn btn-secondary">⏸ Pause</button>
+      <button id="resumeBtn" class="btn btn-primary" style="display: none;">▶ Resume</button>
+      <button id="stopBtn" class="btn btn-danger">⏹ Stop</button>
+    </div>
+  </div>
+
+  <!-- Dashboard & Management Buttons -->
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <button id="openDashboardBtn" class="btn btn-secondary">
+      <span>📊 Open Leads Manager Dashboard</span>
+    </button>
+    <button id="openGuideBtn" class="btn btn-secondary">
+      <span>📖 User Guide & Instructions</span>
+    </button>
+    <button id="clearDataBtn" class="btn btn-secondary" style="font-size: 11px; opacity: 0.7;">
+      <span>🗑 Clear Saved Leads</span>
+    </button>
+  </div>
+
+  <!-- Copyright Footer -->
+  <div style="text-align: center; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-color); font-size: 11px; color: var(--text-dim);">
+    Created by <a href="https://mr-software.online" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">MR Software</a>
+    <br>© MR Software • <a href="https://mr-software.online" target="_blank" style="color: inherit; text-decoration: underline;">mr-software.online</a>
+  </div>
+
+  <script src="lib/utils.js"></script>
+  <script src="lib/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

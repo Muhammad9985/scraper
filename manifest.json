@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "BizScrape Pro - Fast Business & Lead Scraper",
+  "version": "1.0.0",
+  "description": "Fast business search, lead generator, and deep website email scraping bot for Google Maps. Created by MR Software (mr-software.online).",
+  "author": "MR Software (mr-software.online)",
+  "homepage_url": "https://mr-software.online",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.google.com/maps/*",
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/maps/*"
+      ],
+      "js": [
+        "lib/utils.js",
+        "content_scripts/gmaps_scraper.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "dashboard.html",
+        "guide.html",
+        "styles.css",
+        "lib/utils.js",
+        "lib/storage.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

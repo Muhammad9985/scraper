@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizScrape Pro - User Guide & Setup Manual | MR Software</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .guide-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    .guide-section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 16px;
+      color: white;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    .step-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .code-snippet {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-color);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-family: monospace;
+      color: var(--accent-cyan);
+      font-size: 13px;
+      display: inline-block;
+      margin: 6px 0;
+    }
+
+    .tip-box {
+      background: rgba(6, 182, 212, 0.1);
+      border-left: 4px solid var(--accent-cyan);
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-color);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body class="dashboard-body">
+
+  <div class="guide-container">
+    
+    <!-- Top Header -->
+    <div class="dashboard-header">
+      <div class="logo-group">
+        <div class="logo-icon" style="width: 44px; height: 44px; font-size: 22px;">B</div>
+        <div>
+          <h1 class="brand-title" style="font-size: 24px;">BizScrape Pro User Guide</h1>
+          <p style="font-size: 13px; color: var(--text-muted);">Created by <a href="https://mr-software.online" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">MR Software</a> • mr-software.online</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <a href="dashboard.html" class="btn btn-primary" style="width: auto;">📊 Open Dashboard</a>
+      </div>
+    </div>
+
+    <!-- Quick Overview Stats -->
+    <div class="card" style="margin-bottom: 28px;">
+      <h2 style="font-size: 18px; margin-bottom: 8px; color: white;">What BizScrape Pro Does</h2>
+      <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6;">
+        BizScrape Pro is a high-speed Manifest V3 Chrome Extension developed by MR Software (<strong>mr-software.online</strong>) that automatically searches Google Maps for targeted business categories in any location, auto-scrolls results, extracts verified phone numbers & addresses, and crawls business websites in the background to discover email addresses—all exported into Excel-ready CSV or JSON.
+      </p>
+    </div>
+
+    <!-- Section 1: How to Install in Chrome -->
+    <div class="guide-section">
+      <div class="section-title">
+        <span>🧩 Part 1: How to Install in Chrome</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Open Chrome Extensions Page</h3>
+          <p>Launch Google Chrome, open a new tab, type <span class="code-snippet">chrome://extensions</span> into your address bar, then press <strong>Enter</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Enable Developer Mode</h3>
+          <p>In the top-right corner of the Extensions page, toggle the <strong>Developer mode</strong> switch to <strong>ON</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Click "Load Unpacked"</h3>
+          <p>Click the <strong>Load unpacked</strong> button located in the top-left menu bar.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Select "Scraper" Folder</h3>
+          <p>In the file browser window, select the <strong>Scraper</strong> extension folder (the folder containing <code>manifest.json</code>):</p>
+          <div class="code-snippet">Scraper</div>
+          <p>Click <strong>Select Folder</strong>.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h3>Pin to Chrome Toolbar</h3>
+          <p>Click the <strong>Puzzle Piece icon (🧩)</strong> in Chrome's top-right toolbar, find <strong>BizScrape Pro</strong>, and click the <strong>Pin icon</strong> so it is always accessible with 1 click.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: How to Run a Lead Scraping Search -->
+    <div class="guide-section">
+      <div class="section-title">
+        <span>🚀 Part 2: How to Run a Search</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Open Extension Popup</h3>
+          <p>Click the <strong>BizScrape Pro</strong> icon in your browser toolbar.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Set Search Parameters</h3>
+          <p><strong>Business Category:</strong> Enter the industry (e.g. <code>Dentists</code>, <code>Plumbers</code>, <code>Real Estate</code>, <code>Restaurants</code>).</p>
+          <p><strong>Target Location:</strong> Enter city and state/country (e.g. <code>Miami, FL</code>, <code>New York, NY</code>, <code>London, UK</code>).</p>
+          <p><strong>Target Goal:</strong> Enter target lead count (e.g. <code>100</code>).</p>
+          <p><strong>Extract Emails:</strong> Ensure checked to crawl business websites for email addresses in background.</p>
+          <p><strong>Skip leads missing Phone & Email:</strong> Ensure checked to skip businesses without contact info.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Launch Scraper Bot</h3>
+          <p>Click <strong>🚀 Start Lead Scraper</strong>. The bot will open Google Maps, auto-scroll sidebar results, deduplicate incoming records, and update live metrics in real-time!</p>
+          
+          <div class="tip-box">
+            💡 <strong>Pro Tip:</strong> You can pause or resume the scraping session at any time using the ⏸ Pause and ▶ Resume buttons in the popup.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Dashboard & Exporting -->
+    <div class="guide-section">
+      <div class="section-title">
+        <span>📊 Part 3: Dashboard & Exporting Data</span>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Open Lead Dashboard</h3>
+          <p>Click <strong>📊 Open Leads Manager Dashboard</strong> from the popup (or visit <code>dashboard.html</code>). You will see a full table of all your collected business leads with <strong>SN#</strong> serial numbering.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Instant Search & Filter</h3>
+          <p>Use the top search bar to filter leads by business name, phone number, email address, address, or category in real-time.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Export CSV or JSON</h3>
+          <p>Click <strong>📥 Export CSV (Excel)</strong> to download a clean UTF-8 BOM spreadsheet compatible with Microsoft Excel, Google Sheets, or CRMs. Click <strong>📋 Copy All Emails</strong> to copy all email addresses to clipboard instantly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      Created by <a href="https://mr-software.online" target="_blank" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">MR Software</a> • All rights reserved.
+      <br>Official Website: <a href="https://mr-software.online" target="_blank" style="color: var(--text-muted); text-decoration: underline;">https://mr-software.online</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
